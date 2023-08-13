@@ -10,10 +10,10 @@
     <body>
         <div class="container mt-3">
             <h2>Image Uplaod</h2>
-            <form action="/action_page.php">
+            <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
                     <label for="email">upload file:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="file" class="form-control" name="doc">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
