@@ -1,3 +1,8 @@
+<?php
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +17,7 @@
             <h2>Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="email">upload file:</label>
+                    <label for="file">upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
