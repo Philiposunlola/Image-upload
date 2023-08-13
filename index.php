@@ -1,6 +1,12 @@
 <?php
  
-    
+    include('includes/connect.php');
+
+    if(isset($_POST['submit'])) {
+        $filename = $_FILES['doc'] ['name'];
+        $tempname = $_FILES['doc'] ['tmp_name'];
+        move_uploaded_file($tempname, 'uploads/' .$filename);
+    }
 ?>
 
 
@@ -18,10 +24,10 @@
             <h2>Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="file">upload file:</label>
+                    <label for="file">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </body>
