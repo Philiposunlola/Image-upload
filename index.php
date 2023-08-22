@@ -20,12 +20,20 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                <?php
+                    $sql = "SELECT * FROM media";
+                    $result = mysqli_query($conn, $sql);
+
+                    while($data=mysqli_fetch_array($result))
+
+                ?>
                     <tr>
                         <td>John</td>
                         <td>Doe</td>
