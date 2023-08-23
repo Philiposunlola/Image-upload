@@ -32,7 +32,6 @@
                     $result = mysqli_query($conn, $sql);
 
                     while($data=mysqli_fetch_array($result))
-
                 ?>
                     <tr>
                         <td>John</td>
