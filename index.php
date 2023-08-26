@@ -32,12 +32,13 @@
                     $result = mysqli_query($conn, $sql);
 
                     while($data=mysqli_fetch_array($result))
-                ?>
+                { ?>
                     <tr>
                         <td>John</td>
                         <td>Doe</td>
                         <td>john@example.com</td>
                     </tr>
+                <?php } ?>
                 </tbody>
             </table>  
         </div>
