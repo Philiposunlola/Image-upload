@@ -1,6 +1,6 @@
 <?php
  
-    include('includes/connect.php');
+    include('include/connect.php');
 
 ?>
 
