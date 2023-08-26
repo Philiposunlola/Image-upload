@@ -34,9 +34,9 @@
                     while($data=mysqli_fetch_array($result))
                 { ?>
                     <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
+                        <td><img src="uploads/<?php echo $data['doc']; ?>" style="height: 100px;"></td>
+                        <td><a href="index.php?editid=<?php echo $data['id']; ?>"></a>Edit</td>
+                        <td><a href="index.php?delid=<?php echo $data['id']; ?>"></a>Delete</td>
                     </tr>
                 <?php } ?>
                 </tbody>
