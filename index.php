@@ -32,7 +32,7 @@
                     $result = mysqli_query($conn, $sql);
  
                     while($data = mysqli_fetch_array($result))
-                {?>
+                 {?>
                     <tr>
                         <td><img src="uploads/<?php echo $data['doc']; ?>" style="height: 100px;"></td>
                         <td><a href="edit.php?editid=<?php echo $data['id']; ?>">Edit</a></td>
