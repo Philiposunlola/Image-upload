@@ -10,6 +10,7 @@
 
         if($result) {
             echo 'deleted';
+            header('location:index.php');
         }else{
             echo "error";
         }
