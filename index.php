@@ -2,10 +2,10 @@
  
     include('include/connect.php');
 
-    if (isset($_GET["delid"])) {
+    if (isset($_GET['delid'])) {
         $delid = $_GET['delid'];
 
-        $sql = "delete from media where id='" .$delid. "'";
+        $sql = "delete from media where id='" . $delid . "'";
         $result = mysqli_query($conn, $sql);
 
         if($result) {
