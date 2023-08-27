@@ -2,7 +2,7 @@
  
     include('include/connect.php');
 
-    if (isset($_GET{'delid'})) {
+    if (isset($_GET{"delid"})) {
         $delid = $_GET['delid'];
 
         $sql = "delete frpm media where id='" .$delid. "'";
