@@ -2,6 +2,17 @@
  
     include('include/connect.php');
 
+    if (isset($_GET{'delid'})) {
+        $delid = $_GET['delid'];
+
+        $sql = "delete frpm media where id='" .$delid. "'";
+        $result = mysql_query($conn, $sql);
+
+        if($result) {
+            echo '';
+        }
+    }
+
 ?>
 
 
