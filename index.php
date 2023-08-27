@@ -35,8 +35,8 @@
                  {?>
                     <tr>
                         <td><img src="uploads/<?php echo $data['doc']; ?>" style="height: 100px;"></td>
-                        <td><a href="edit.php?editid=<?php echo $data['id']; ?>">Edit</a></td>
-                        <td><a href="index.php?delid=<?php echo $data['id']; ?>">Delete</a></td>
+                        <td><a href="edit.php?editid=<?php echo $data['doc']; ?>">Edit</a></td>
+                        <td><a href="index.php?delid=<?php echo $data['doc']; ?>">Delete</a></td>
                     </tr>
                 <?php } ?>
                 </tbody>
