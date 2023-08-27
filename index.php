@@ -6,7 +6,7 @@
         $delid = $_GET['delid'];
 
         $sql = "delete from media where id='" .$delid. "'";
-        $result = mysql_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
         if($result) {
             echo 'deleted';
