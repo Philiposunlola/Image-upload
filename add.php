@@ -5,10 +5,10 @@
     if (isset($_POST['submit'])) {
        $filename = $_FILES['doc'] ['name'];
        $tempname = $_FILES['doc'] ['tmp_name'];
-       move_uploaded_file($tempname, 'uploads/' . $filename);
+       move_uploaded_file($tempname, 'uploads/' .$filename);
 
        
-       $sql = "insert into media (doc) values ('" . $filename ."')";
+       $sql = "insert into media (doc) values ('" .$filename."')";
        $result = mysqli_query($conn, $sql);
 
        if ($result) {
@@ -35,7 +35,7 @@
             <h2>Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="file">Upload file:</label>
+                    <label for="email">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
