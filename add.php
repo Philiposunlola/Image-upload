@@ -6,6 +6,10 @@
        $filename = $_FILES['doc'] ['name'];
        $tempname = $_FILES['doc'] ['tmp_name'];
        move_uploaded_file($tempname, 'uploads/' . $filename);
+
+       
+       $sql = "insert into media (doc) values ('" . $filename ."')";
+       $result = mysqli_query($conn, $sql);
     }
  
 ?>
