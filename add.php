@@ -1,6 +1,12 @@
 <?php
  
     include('includes/connect.php');
+
+    if (isset($_POST['submit'])) {
+       $filename = $_FILES['doc'] ['name'];
+       $tempname = $_FILES['doc'] ['tmp_name'];
+       move_uploaded_file($tempname, 'uploads/' . $filename);
+    }
  
 ?>
 
