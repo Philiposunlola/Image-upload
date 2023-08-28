@@ -1,6 +1,6 @@
 <?php
  
-    include('include/connect.php');
+    include('includes/connect.php');
 
     if (isset($_GET['delid'])) {
         $delid = $_GET['delid'];
