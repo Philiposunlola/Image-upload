@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>All images</title>
+        <title>Edit Image Upload</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,10 +32,10 @@
     </head>
     <body>
         <div class="container mt-3">
-            <h2>Image Uplaod</h2>
+            <h2>Edit Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="email">Upload file:</label>
+                    <label for="file">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
