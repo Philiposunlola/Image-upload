@@ -11,9 +11,15 @@
     }
 
     if (isset($_POST['submit'])) {
-       $filename = $_FILES['doc'] ['name'];
-       $tempname = $_FILES['doc'] ['tmp_name'];
-       move_uploaded_file($tempname, 'uploads/' .$filename);
+       
+       if ($_FILES['doc'] ['name'] !=="")  {
+            $filename = $_FILES['doc'] ['name'];
+            $tempname = $_FILES['doc'] ['tmp_name'];
+            move_uploaded_file($tempname, 'uploads/' .$filename);
+        
+       } else {
+            $filename = $_POST['oldimage'];
+       }
 
        
        $sql = "insert into media (doc) values ('" .$filename."')";
