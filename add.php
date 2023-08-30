@@ -22,11 +22,12 @@
        }
 
        
-       $sql = "insert into media (doc) values ('" .$filename."')";
+       $sql = "UPDATE MEDIA SET doc='" .$filename. "' WHERE id='" .$editdata. "'";
        $result = mysqli_query($conn, $sql);
 
        if ($result) {
-            echo 'data inserted';
+            echo 'data updated';
+            header('location:index.php');
        }else {
             echo 'error';
        }
