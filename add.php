@@ -43,9 +43,13 @@
             <h2>Edit Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
+                    <label for="file">Old image:</label>
+                    <img src="uploads/<?php echo $editdata['doc'];?>" style = "height: 100px";>
+                    
                     <label for="file">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
+
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
