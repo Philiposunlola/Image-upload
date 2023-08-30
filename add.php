@@ -5,7 +5,7 @@
     if (isset($_GET['editid'])) {
         $editid = $_GET['editid'];
 
-        $sql = "SELECT * FROM MEDIA WHERE id = '" .$editid. "'";
+        $sql = "SELECT * FROM MEDIA WHERE id = '".$editid."'";
         $result = mysqli_query($conn, $sql);
         $editid = mysqli_fetch_array($result);
     }
@@ -15,14 +15,14 @@
        if ($_FILES['doc'] ['name'] !=="")  {
             $filename = $_FILES['doc'] ['name'];
             $tempname = $_FILES['doc'] ['tmp_name'];
-            move_uploaded_file($tempname, 'uploads/' .$filename);
+            move_uploaded_file($tempname, 'uploads/'.$filename);
         
        } else {
             $filename = $_POST['oldimage'];
        }
 
        
-       $sql = "UPDATE MEDIA SET doc='" .$filename. "' WHERE id='" .$editdata. "'";
+       $sql = "UPDATE MEDIA SET doc='" .$filename. "' where id='".$editdata."'";
        $result = mysqli_query($conn, $sql);
 
        if ($result) {
@@ -50,12 +50,12 @@
             <h2>Edit Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="file">Old image:</label>
+                    <label for="email">Old image:</label>
                     <img src="uploads/<?php echo $editdata['doc'];?>" style = "height: 100px";>
 
                     <input type="hidden" name="oldimage" value="<?php echo $editdata['doc'];?>">
                     
-                    <label for="file">Upload file:</label>
+                    <label for="email">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
 
