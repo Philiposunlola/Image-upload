@@ -23,7 +23,7 @@
        }
 
        
-       $sql = "UPDATE MEDIA SET doc='" .$filename. "' where id='".$editdata."'";
+       $sql = "UPDATE MEDIA SET doc='" .$filename. "' where id='".$editid."'";
        $result = mysqli_query($conn, $sql);
 
        if ($result) {
