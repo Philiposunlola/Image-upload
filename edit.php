@@ -3,11 +3,12 @@
     include('includes/connect.php');
 
     if (isset($_GET['editid'])) {
+
         $editid = $_GET['editid'];
 
         $sql = "SELECT * FROM MEDIA WHERE id = '".$editid."'";
         $result = mysqli_query($conn, $sql);
-        $editid = mysqli_fetch_array($result);
+        $editdata= mysqli_fetch_array($result);
     }
 
     if (isset($_POST['submit'])) {
