@@ -5,7 +5,7 @@
     if (isset($_GET['delid'])) {
         $delid = $_GET['delid'];
 
-        $sql = "delete from media where doc='" . $delid . "'";
+        $sql = "delete from media where doc='" .$delid. "'";
         $result = mysqli_query($conn, $sql);
 
         if($result) {
