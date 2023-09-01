@@ -51,12 +51,12 @@
             <h2>Edit Image Uplaod</h2>
             <form method="post" enctype="multipart/form-data">
                 <div class="mb-3 mt-3">
-                    <label for="email">Old image:</label>
+                    <label for="file">Old image:</label>
                     <img src="uploads/<?php echo $editdata['doc'];?>" style = "height: 100px";>
 
                     <input type="hidden" name="oldimage" value="<?php echo $editdata['doc'];?>">
                     
-                    <label for="email">Upload file:</label>
+                    <label for="file">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
 
