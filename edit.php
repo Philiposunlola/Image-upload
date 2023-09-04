@@ -56,7 +56,7 @@
 
                     <input type="hidden" name="oldimage" value="<?php echo $editdata['doc'];?>">
                     
-                    <label for="file">Upload file:</label>
+                    <label for="email">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
                 </div>
 
