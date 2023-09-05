@@ -37,7 +37,7 @@
 ?>
 
 
-<!DOCTYPE html>
+<!DOCTYPE>
 <html lang="en">
     <head>
         <title>Edit Image Upload</title>
