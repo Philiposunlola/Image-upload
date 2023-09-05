@@ -2,7 +2,7 @@
  
     include('includes/connect.php');
 
-    if (isset($_GET['delid'])) {
+    if (isset($_GET['deldoc'])) {
         $delid = $_GET['delid'];
 
         $sql = "delete from media where doc='" .$delid. "'";
