@@ -4,9 +4,9 @@
 
     if (isset($_GET['editid'])) {
 
-        $editid = $_GET['editid'];
+        $editdoc = $_GET['editid'];
 
-        $sql = "SELECT * FROM MEDIA WHERE id = '".$editid."'";
+        $sql = "SELECT * FROM MEDIA WHERE id = '".$editdoc."'";
         $result = mysqli_query($conn, $sql);
         $editdata= mysqli_fetch_array($result);
     }
