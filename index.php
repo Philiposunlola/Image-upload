@@ -3,9 +3,9 @@
     include('includes/connect.php');
 
     if (isset($_GET['deldoc'])) {
-        $delid = $_GET['deldoc'];
+        $deldoc = $_GET['deldoc'];
 
-        $sql = "delete from media where doc='" .$delid. "'";
+        $sql = "delete from media where doc='" .$deldoc. "'";
         $result = mysqli_query($conn, $sql);
 
         if($result) {
