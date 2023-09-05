@@ -3,7 +3,7 @@
     include('includes/connect.php');
 
     if (isset($_GET['deldoc'])) {
-        $delid = $_GET['delid'];
+        $delid = $_GET['deldoc'];
 
         $sql = "delete from media where doc='" .$delid. "'";
         $result = mysqli_query($conn, $sql);
