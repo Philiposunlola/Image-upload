@@ -19,7 +19,7 @@
             move_uploaded_file($tempname, 'uploads/'.$filename);
         
        } else {
-            $filename = $_POST['oldimage'];
+            $filename = $_POST[''];
        }
 
        
