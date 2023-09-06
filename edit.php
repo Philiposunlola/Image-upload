@@ -15,7 +15,7 @@
        
        if ($_FILES['doc'] ['name'] !="") {
             $filename = $_FILES['doc'] ['name'];
-            $ = $_FILES['doc'] ['tmp_name'];
+            $tempname = $_FILES['doc'] ['tmp_name'];
             move_uploaded_file($tempname, 'uploads/'.$filename);
         
        } else {
