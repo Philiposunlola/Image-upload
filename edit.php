@@ -15,11 +15,11 @@
        
        if ($_FILES['doc'] ['name'] !="") {
             $filename = $_FILES['doc'] ['name'];
-            $tempname = $_FILES['doc'] ['tmp_name'];
+            $ = $_FILES['doc'] ['tmp_name'];
             move_uploaded_file($tempname, 'uploads/'.$filename);
         
        } else {
-            $filename = $_POST[''];
+            $filename = $_POST['oldimage'];
        }
 
        
