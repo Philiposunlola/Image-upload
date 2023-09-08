@@ -1,40 +1,61 @@
 <?php
- 
-    include('includes/connect.php');
+include('includes/connect.php');
 
-    if (isset($_GET['editid'])) {
+if (isset($_GET['editid'])) {
+    $editdoc = $_GET['editid'];
+    $sql = "SELECT * FROM MEDIA WHERE id = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $editdoc);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $editdata = mysqli_fetch_array($result);
+}
 
-        $editdoc = $_GET['editid'];
-
-        $sql = "SELECT * FROM MEDIA WHERE id = '".$editdoc."'";
-        $result = mysqli_query($conn, $sql);
-        $editdata= mysqli_fetch_array($result);
-    }
-
-    if (isset($_POST['submit'])) {
-       
-       if ($_FILES['doc'] ['name'] !="") {
-            $filename = $_FILES['doc'] ['name'];
-            $tempname = $_FILES['doc'] ['tmp_name'];
-            move_uploaded_file($tempname, 'uploads/'.$filename);
+if (isset($_POST['submit'])) {
+    if ($_FILES['doc']['name'] !== "") {
+        $filename = $_FILES['doc']['name'];
+        $tempname = $_FILES['doc']['tmp_name'];
+        $filetype = $_FILES['doc']['type'];
+        $filesize = $_FILES['doc']['size'];
         
-       } else {
-            $filename = $_POST['oldimage'];
-       }
-
-       
-       $sql = "UPDATE MEDIA SET doc='" .$filename. "' where id='".$editdoc."'";
-       $result = mysqli_query($conn, $sql);
-
-       if ($result) {
-            echo 'data updated';
-            header('location:index.php');
-       }else {
-            echo 'error';
-       }
+        // Perform file type and size validation here (e.g., using JavaScript)
+        
+        $uploadDir = 'uploads/';
+        $targetFile = $uploadDir . basename($filename);
+        
+        if (move_uploaded_file($tempname, $targetFile)) {
+            // Update the database with the new filename
+            $sql = "UPDATE MEDIA SET doc = ? WHERE id = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "si", $filename, $editdoc);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                echo 'Data updated';
+                header('location: index.php');
+            } else {
+                echo 'Error updating data';
+            }
+        } else {
+            echo 'Error uploading file';
+        }
+    } else {
+        $filename = $_POST['oldimage'];
+        // Update the database with the old filename (no file change)
+        $sql = "UPDATE MEDIA SET doc = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $filename, $editdoc);
+        
+        if (mysqli_stmt_execute($stmt)) {
+            echo 'Data updated';
+            header('location: index.php');
+        } else {
+            echo 'Error updating data';
+        }
     }
- 
+}
 ?>
+<!-- HTML Form Here -->
+
 
 
 <!DOCTYPE html>
