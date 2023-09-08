@@ -54,7 +54,7 @@
                     <label for="file">Old image:</label>
                     <img src="uploads/<?php echo $editdata['doc'];?>" style = "height: 100px";>
 
-                    <input type="hidden" name="oldimage" value="<?php echo $editdata['doc'];?>">
+                    <input type="" name="oldimage" value="<?php echo $editdata['doc'];?>">
                     
                     <label for="email">Upload file:</label>
                     <input type="file" class="form-control" name="doc">
